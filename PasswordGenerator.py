@@ -6,6 +6,7 @@ karakterler4="1234567890"
 
 choices=[1,2,3,4]
 uzunluk=int(input("Uzunluk:  "))
+aaaks=int(input("Ardarda gelebilecek aynı tip karakter sayısı:  "))
 password=[]
 
 l=random.choice(choices)
@@ -16,10 +17,11 @@ for i in range(uzunluk):
 
     password.append(a)
     l=random.choice(choices)
-    while i>0 and password[i-1] in eval(("karakterler")+str(l)):
+    while i>aaaks-1 and password[i-aaaks-1] in eval(("karakterler")+str(l)):
         l=random.choice(choices)
 
 
 
 
 print(" ".join(password))
+
